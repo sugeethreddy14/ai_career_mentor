@@ -1,0 +1,40 @@
+services:
+  # -----------------------------
+  # Backend (FastAPI + Uvicorn)
+  # -----------------------------
+  - type: web
+    name: ai-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements_render.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: HF_HOME
+        value: /opt/render/.cache/huggingface
+      - key: TRANSFORMERS_CACHE
+        value: /opt/render/.cache/transformers
+      - key: LLM_API_KEY
+        sync: false
+      - key: JOB_API_KEY
+        sync: false
+      - key: MODEL_NAME
+        value: "gemini-pro"
+      - key: VECTOR_DB_PATH
+        value: "./data/skills_index.faiss"
+
+  # -----------------------------
+  # Frontend (Streamlit UI)
+  # -----------------------------
+  - type: web
+    name: ai-frontend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements_render.txt
+    startCommand: streamlit run ui/app.py --server.port=10001 --server.address=0.0.0.0
+    envVars:
+      - key: BACKEND_URL
+        value: https://ai-backend.onrender.com
+      - key: PYTHON_VERSION
+        value: 3.11.9

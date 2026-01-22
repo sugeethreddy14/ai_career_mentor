@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: career_backend
+    ports:
+      - "7311:7311"
+    env_file:
+      - .env
+  ui:
+    build: ./ui
+    container_name: career_ui
+    ports:
+      - "7312:7312"
+    depends_on:
+      - backend

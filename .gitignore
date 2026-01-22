@@ -1,6 +1,9 @@
+# General
+# See https://help.github.com/articles/ignoring-files/ for more details
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
 
 # C extensions
@@ -31,6 +34,11 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
 
 # Installer logs
 pip-log.txt
@@ -205,3 +213,116 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+=======
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+/.env
+.env
+.env.*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+coverage.xml
+htmlcov/
+
+# MyPy, Pyright, and other caches
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and local runtime files
+logs/
+*.log
+*.log.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Docker
+docker-compose.override.yml
+docker-compose.*.env
+**/docker-compose.override.yml
+*.tar
+*.tgz
+
+# Docker volumes / local compose state
+**/.docker/
+
+# Secrets and keys
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+
+# Database files and large binary/artifact files
+*.sqlite3
+*.db
+*.db-journal
+
+# FAISS / vector index and large data files (project-specific)
+app/data/*.idx
+app/data/*.bin
+app/data/*.ann
+app/data/*.sqlite
+
+# Don't ignore mock_data by default — tests may rely on it
+# If you want to ignore all data, uncomment the next line
+# app/data/
+
+# Tests and reports
+test-results/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Python egg and build artifacts
+*.egg
+*.egg-info
+
+# pipenv
+Pipfile.lock
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+*.manifest
+*.spec
+
+# Node (if any UI tools are added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE specific
+/.vscode/
+.idea/
+
+# Local environment overrides (docker-compose, etc.)
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# End of .gitignore
+

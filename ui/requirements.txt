@@ -1,0 +1,5 @@
+streamlit
+requests
+PyMuPDF
+
+# Others as you add features

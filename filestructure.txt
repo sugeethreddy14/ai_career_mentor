@@ -1,0 +1,36 @@
+ai-career-mentor/
+│
+├── app/
+│   ├── agents/
+│   │   ├── profile_agent.py
+│   │   ├── mentor_agent.py
+│   │   └── __init__.py
+│   ├── services/
+│   │   ├── api_client.py
+│   │   ├── rag_service.py
+│   │   └── __init__.py
+│   ├── data/
+│   │   ├── mock_data/
+│   │   └── skills_index.faiss
+│   ├── memory/
+│   │   ├── memory.py
+│   │   ├── session_manager.py
+│   │   └── __init__.py
+│   ├── main.py
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── ui/
+│   ├── app.py
+│   ├── requirements.txt
+│   └── Dockerfile
+│
+├── tests/
+│   ├── test_profile_agent.py
+│   ├── test_mentor_agent.py
+│   └── test_api_client.py
+│
+├── .env
+├── docker-compose.yml
+├── README.md
+└── .gitignore
